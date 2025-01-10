@@ -59,7 +59,7 @@ jobs:
       - name: Infer NGC Pytorch version
         id: ngc-pytorch
         run: |
-          echo "ngc-pytorch=$(cat .pytorch-version)" | tee -a "$GITHUB_OUTPUT"
+          echo "main=$(cat .pytorch-version)" | tee -a "$GITHUB_OUTPUT"
   
   cicd-test-container-build:
     if: ${{ github.event.label.name == 'Run CICD' || needs.pre-flight.outputs.event_name == 'workflow_dispatch' }}
